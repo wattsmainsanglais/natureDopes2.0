@@ -17,7 +17,7 @@ export default function Nav(){
 
         <DropdownMenu.Root>
         <DropdownMenu.Trigger>
-        <Button variant="surface">
+        <Button variant="surface" aria-label="Open navigation menu">
 
             <RxHamburgerMenu size={30} />
         </Button>

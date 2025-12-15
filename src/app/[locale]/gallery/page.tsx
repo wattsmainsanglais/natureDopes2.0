@@ -75,13 +75,14 @@ export default async function PageRootGallery(){
         const res = await fetch(`${process.env.LIVESITE}/gallery/api`, { cache: 'no-store' })
         if (!res.ok) {
          return {
+          igResponse: [],
           error: 'Data from instagram has failed to load, please try again later'
          }
         }
-        
+
         return res.json()
       }
-    const {igResponse, error}: {igResponse: InstagramApiData, error: string} = await getInstagramData();
+    const {igResponse = [], error}: {igResponse?: InstagramApiData, error?: string} = await getInstagramData();
 
    
 

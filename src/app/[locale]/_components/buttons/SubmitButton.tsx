@@ -12,10 +12,10 @@ export const SubmitButton = ({disabled,  children }: {disabled?: boolean, childr
 
     const { pending } = useFormStatus()
     return (
-      
-      <Button type="submit" disabled={pending || disabled}>
+
+      <Button type="submit" disabled={pending || disabled} aria-busy={pending}>
         {pending ? <Spinner /> : children}
       </Button>
-     
+
     )
   }

@@ -17,7 +17,7 @@ export default function LanguageSwitcher({locale}: {locale: string}){
         <>
         <DropdownMenu.Root >
             <DropdownMenu.Trigger>
-                <Button variant="ghost" size='2' >
+                <Button variant="ghost" size='2' aria-label="Change language">
                     {locale}<ChevronDownIcon/>
                 </Button>
             </DropdownMenu.Trigger>

@@ -13,11 +13,11 @@ export async function GET(request: NextRequest){
  
     console.log(res.status)
     if(res.status == 400 || res.status == 500){
-        return NextResponse.json({error: t('insta1') })
+        return NextResponse.json({igResponse: [], error: t('insta1') })
     }
 
     if(!res.ok){
-        return NextResponse.json({error: 'Technical issue. If the problem persists please contact us' })
+        return NextResponse.json({igResponse: [], error: 'Technical issue. If the problem persists please contact us' })
     }
 
 
@@ -29,8 +29,8 @@ export async function GET(request: NextRequest){
         newArray.push(igData.data[i])
     }
 
-    
-    
+
+
     return NextResponse.json({igResponse: newArray})
 }
 
