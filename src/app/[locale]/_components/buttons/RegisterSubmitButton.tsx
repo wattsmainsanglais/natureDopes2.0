@@ -13,10 +13,10 @@ export const RegisterSubmitButton = ({ children }: { children: ReactNode }) => {
 
     const { pending } = useFormStatus()
     return (
-      
-      <Button color='blue' type="submit" disabled={pending}>
+
+      <Button color='blue' type="submit" disabled={pending} aria-busy={pending}>
         {pending ? <Spinner /> : children}
       </Button>
-     
+
     )
   }

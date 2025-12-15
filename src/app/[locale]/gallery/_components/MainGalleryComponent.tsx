@@ -36,14 +36,14 @@ export default function MainGalleryComponent({session, igResponse, imageDataPris
         {session?
             
                 <>
-                 <Flex gap='1'  ml={{initial: '2', xs:'2', sm:'3', md:'4', lg:'6', xl:'7'}}><Badge variant="surface" size='3'>{t('ndgallery')}</Badge><Switch size='3' onClick={galleryToggle} /><Badge variant="surface" size='3'>{t('usergallery')}</Badge></Flex> 
-                 <Box mt='3' ml='1' mr='1'> 
-                   
-                
-                    {galleryInView? error?  <p>{error}</p>: <InstagramGallery igResponse={igResponse}  />: prismaError? <p>{prismaError}</p> : <IagonGallery imageDataPrisma={imageDataPrisma} LoadingGif={LoadingGif} />}
+                 <Flex gap='1'  ml={{initial: '2', xs:'2', sm:'3', md:'4', lg:'6', xl:'7'}}><Badge variant="surface" size='3'>{t('ndgallery')}</Badge><Switch size='3' onClick={galleryToggle} aria-label="Toggle between Nature Dopes gallery and your gallery" /><Badge variant="surface" size='3'>{t('usergallery')}</Badge></Flex>
+                 <Box mt='3' ml='1' mr='1'>
+
+
+                    {galleryInView? <InstagramGallery igResponse={igResponse}  />: prismaError? <p>{prismaError}</p> : <IagonGallery imageDataPrisma={imageDataPrisma} LoadingGif={LoadingGif} />}
                   </Box>
                 </>
-            : error? <p>{error}</p>: <InstagramGallery igResponse={igResponse} />
+            : <InstagramGallery igResponse={igResponse} />
         
        
                 

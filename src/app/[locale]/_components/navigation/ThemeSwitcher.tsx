@@ -22,7 +22,7 @@ export default function ThemeSwitcher(){
       }
 
       return (
-        <button onClick={toggleMode}>{theme === 'light' ? <CiDark color="green" size={30} />: <CiLight color='green' size={30} />}</button>
+        <button onClick={toggleMode} aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}>{theme === 'light' ? <CiDark color="green" size={30} />: <CiLight color='green' size={30} />}</button>
       )
 }
 

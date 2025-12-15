@@ -164,7 +164,7 @@ function clearSelection() {
         <Flex p='1' justify='between'>
           <Flex align='center'>
             <label className={style.findLabel}>{t('allfinds')}</label>
-            <Switch checked={!allChecked} onCheckedChange={() => setAllChecked(allChecked => !allChecked)} />
+            <Switch checked={!allChecked} onCheckedChange={() => setAllChecked(allChecked => !allChecked)} aria-label="Toggle between all finds and your finds" />
             <label className={style.findLabel}>{t('yourfinds')}</label>
           </Flex>
 
@@ -189,7 +189,7 @@ function clearSelection() {
         <Flex align='center'>
           <form onSubmit={handleSubmit}>
 
-            <TextField.Root placeholder={t('searchbar')} onChange={event => setSearchParams(event.target.value)}>
+            <TextField.Root placeholder={t('searchbar')} onChange={event => setSearchParams(event.target.value)} aria-label="Search species by name">
               <TextField.Slot>
               <MagnifyingGlassIcon height="16" width="16" />
               </TextField.Slot>
@@ -201,7 +201,7 @@ function clearSelection() {
           {!session? null :  uploadForm ? null : <Box p='1'><Button onClick={toggleUploadForm} disabled={isRefreshing}>{t('addbutton')}</Button> </Box>}
           {editForm ? <EditImageForm species={species_name} lng={gps_long} lat={gps_lat} imageId={imageId} toggleEditForm={toggleEditForm} getData={getData} />: null }
           {session? null:<Tooltip className={style.toolTip}  content='Sign in for more map features'>
-            <Button ml='1%'  radius='medium'>i</Button>
+            <Button ml='1%'  radius='medium' aria-label="Information about map features">i</Button>
 
           </Tooltip>
           }
